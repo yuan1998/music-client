@@ -36,7 +36,15 @@
           </template>
         </el-dropdown>
       </div>
+      <ShareDialog v-model="showShare"
+                   :songPic="songPic"
+                   :songTitle="`${this.songTitle} - ${this.singerName}`"
+                   :url="``"
+      />
       <div class="song-ctr song-edit">
+        <el-icon v-if="this.songUrl" color="#000000" size="15px" style="width:5rem">
+          <Share @click="showShare = true"/>
+        </el-icon>
         <!--收藏-->
         <yin-icon :class='{ active: isCollection }' :icon="iconList.XIHUAN" @click='collection'></yin-icon>
         <!--下载-->
@@ -49,18 +57,21 @@
 </template>
 
 <script>
+import {Share} from '@element-plus/icons-vue'
 import {mapGetters} from 'vuex'
 import mixin from '@/mixins'
 import YinIcon from './YinIcon'
 import {HttpManager} from '@/api'
 import {formatSeconds} from '@/utils'
 import {ICON, LYRIC} from '@/enums'
+import ShareDialog from '../../components/ShareDialog'
 
 export default {
   name: 'yin-play-bar',
   mixins: [mixin],
   data() {
     return {
+      showShare: false,
       startTime: '00:00',
       endTime: '00:00',
       nowTime: 0, // 进度条的位置
@@ -82,7 +93,9 @@ export default {
     }
   },
   components: {
-    YinIcon
+    YinIcon,
+    Share,
+    ShareDialog,
   },
   computed: {
     ...mapGetters([

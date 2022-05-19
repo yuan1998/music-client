@@ -1,7 +1,7 @@
 <template>
   <div class="song-container">
     <div class="song-pic">
-      <img :src="songPic" />
+      <img style="width: 100%;height: 100%;object-fit: cover;" :src="songPic" />
     </div>
     <ul class="song-info">
       <li>歌手：{{ singerName }}</li>

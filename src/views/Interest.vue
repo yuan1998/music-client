@@ -94,7 +94,6 @@ const options = [
     questions: [
       "男",
       "女",
-
     ]
   },
   {

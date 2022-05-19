@@ -7,6 +7,8 @@ const HttpManager = {
   // 注册
   SignUp: (params) => post(`user/add`, params),
 
+  // 搜索用户
+  searchUser: (query='') => get(`user/search?q=${query}`),
   // 更新用户信息
   updateUserMsg: (params) => post(`user/update`, params),
   // 返回指定ID的用户

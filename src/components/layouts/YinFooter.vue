@@ -11,7 +11,7 @@ import { ref } from "vue";
 
 const footerList = ref([
   "关于 | 帮助 | 条款 | 反馈",
-  "Copyright © 2021 ",
+  "Copyright © 2022 ",
 ]);
 </script>
 

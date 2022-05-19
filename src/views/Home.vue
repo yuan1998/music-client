@@ -33,7 +33,6 @@ onMounted(() => {
   try {
     HttpManager.getBannerList().then((res) => {
       bannerList.value = res;
-
     })
 
     HttpManager.getSongList().then((res) => {

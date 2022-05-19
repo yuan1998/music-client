@@ -11,6 +11,7 @@
       <el-table-column prop="songName" label="歌曲名" />
       <el-table-column prop="singerName" label="歌手" />
       <el-table-column prop="introduction" label="专辑" />
+      <el-table-column prop="type" label="音乐类型" />
     </el-table>
   </div>
 </template>
